@@ -7,8 +7,8 @@
     tools:context="edu.team27.perfectcube.RegisterActivity">
 
 
-
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Please enter your information below."
@@ -19,51 +19,61 @@
 
     <EditText
         android:id="@+id/usernameText"
-        android:layout_width="81dp"
-        android:layout_height="22dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="29dp"
         android:inputType="textPassword"
-        tools:layout_editor_absoluteX="184dp"
-        tools:layout_editor_absoluteY="305dp" />
+        app:layout_constraintStart_toEndOf="@+id/passwordEntry"
+        app:layout_constraintTop_toTopOf="@+id/passwordText" />
 
     <TextView
         android:id="@+id/userEntry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
         android:text="Username"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="276dp" />
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
         android:id="@+id/passwordText"
-        android:layout_width="82dp"
-        android:layout_height="19dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:inputType="textPassword"
-        tools:layout_editor_absoluteX="184dp"
-        tools:layout_editor_absoluteY="276dp" />
+        app:layout_constraintStart_toStartOf="@+id/usernameText"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/passwordEntry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Password"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="305dp" />
+        app:layout_constraintStart_toStartOf="@+id/userEntry"
+        app:layout_constraintTop_toBottomOf="@+id/userEntry" />
 
     <Button
         android:id="@+id/submitButton"
-        android:layout_width="79dp"
-        android:layout_height="34dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
         android:text="Submit"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="335dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/warning"
+        app:layout_constraintEnd_toEndOf="@+id/warning"
+        app:layout_constraintStart_toStartOf="@+id/warning" />
 
     <TextView
         android:id="@+id/warning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#ff0000"
+        android:layout_marginTop="28dp"
         android:text="This username is already under use."
-        tools:layout_editor_absoluteX="81dp"
-        tools:layout_editor_absoluteY="379dp" />
+        android:textColor="#ff0000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernameText" />
 
 </android.support.constraint.ConstraintLayout>

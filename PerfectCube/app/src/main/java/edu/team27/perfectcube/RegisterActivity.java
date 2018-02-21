@@ -25,10 +25,10 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        submitButton = (Button) findViewById(R.id.submitButton);
-        username = (EditText) findViewById(R.id.usernameText);
-        password = (EditText) findViewById(R.id.passwordText);
-        warning = (TextView) findViewById(R.id.warning);
+        submitButton = findViewById(R.id.submitButton);
+        username = findViewById(R.id.usernameText);
+        password = findViewById(R.id.passwordText);
+        warning = findViewById(R.id.warning);
 
         warning.setVisibility(View.GONE);
 
