@@ -82,4 +82,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         return values.size();
     }
 
+    public List<ShelterInfo> getValues() {
+        return this.values;
+    }
+
+    public void setValues(List<ShelterInfo> list) {
+        values.clear();
+        values.addAll(list);
+        notifyDataSetChanged();
+    }
+
 }

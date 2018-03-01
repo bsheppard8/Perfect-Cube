@@ -14,7 +14,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter theAdapter;
+    private Adapter theAdapter;
     private RecyclerView.LayoutManager layoutManager;
 
     @Override
@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void readCSV() {
+        List<ShelterInfo> data = new ArrayList<>();
 
         try {
             InputStreamReader inputStream = new InputStreamReader(getAssets()
@@ -46,10 +47,11 @@ public class MainActivity extends AppCompatActivity {
             int index = 0;
             while (line != null) {
                 String[] lines = line.split(",");
-                theAdapter.add(index, new ShelterInfo(lines[1], Integer.parseInt
+                data.add(index, new ShelterInfo(lines[1], Integer.parseInt
                         (lines[2]), lines[3], lines[6], lines[8]));
             }
             bufferedReader.close();
+            theAdapter.setValues(data);
         } catch (IOException ex) {
             ex.printStackTrace();
         }
